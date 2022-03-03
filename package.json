@@ -1,0 +1,26 @@
+{
+  "name": "aws-typescript-lambda-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate template for TypeScript lambda",
+  "scripts": {
+    "clean": "rimraf dist && rimraf .aws-sam",
+    "dev": "yarn sam:debug & yarn esbuild --watch",
+    "build": "yarn esbuild --minify",
+    "deploy": "yarn sam:build && yarn sam:deploy",
+    "esbuild": "yarn clean && esbuild src/app.ts --outfile=dist/app.js --bundle --platform=node --target=node14 --sourcemap",
+    "sam:debug": "sam local start-api --template config/template.yaml",
+    "sam:build": "yarn build && sam build --template config/template.yaml",
+    "sam:deploy": "sam deploy --guided"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "author": "Zishan Neno",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.18",
+    "esbuild": "^0.14.23",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.5"
+  }
+}

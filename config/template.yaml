@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: "aws-typescript-lambda-boilerplate"
+
+Globals:
+  Function:
+    Timeout: 15
+
+Resources:
+  pingFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../dist/
+      Handler: app.lambdaHandler
+      Runtime: nodejs14.x
+      Architectures:
+        - x86_64
+      Events:
+        Ping:
+          Type: Api
+          Properties:
+            Path: /ping
+            Method: get
+
+Outputs:
+  PingApi:
+    Description: "API gateway"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/ping/"
+  pingFunction:
+    Description: "Ping function ARN"
+    Value: !GetAtt pingFunction.Arn
+  pingFunctionIamRole:
+    Description: "IAM role for the function"
+    Value: !GetAtt pingFunctionRole.Arn
