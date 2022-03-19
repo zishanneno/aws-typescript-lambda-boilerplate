@@ -1,16 +1,17 @@
 {
-    "compilerOptions": {
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "target": "es2020",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "rootDir": "src",
-      "outDir": "dist",
-      "sourceMap": true,
-      "noEmitOnError": true,
-      "typeRoots": ["node_modules/@types"]
-    }
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2020",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "typeRoots": ["node_modules/@types"]
   }
+}

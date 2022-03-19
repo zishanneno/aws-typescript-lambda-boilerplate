@@ -41,7 +41,7 @@ The `template.yaml` file in the `config` directory can be configured to modify y
 
 In order to get readable stack traces in CloudWatch, add `NODE_OPTIONS=--enable-source-maps` to your lambda function's environment variables.
 
-For going into production, you may want to use `--sources-content=false` option in the `build` script so that source map output to CloudWatch is minimal and only shows references your source code (for example `src/app.ts:8:9`) instead of throwing complete stack traces.
+For going into production, you may want to use `--sources-content=false` option in the `build` script so that source map output to CloudWatch is minimal and only shows references your source code (for example `src/index.ts:8:9`) instead of throwing complete stack traces.
 
 Why or what is `rimraf` package? Because everybody ain't using \*nix. :smile:
 

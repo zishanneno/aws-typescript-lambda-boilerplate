@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lambda handler should return a success response 1`] = `
+Object {
+  "body": "{
+  \\"message\\": \\"pong\\"
+}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "isBase64Encoded": false,
+  "statusCode": 200,
+}
+`;
+
+exports[`Lambda handler should return an error response 1`] = `null`;

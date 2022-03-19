@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error response should handle undefined error 1`] = `
+Object {
+  "body": "{
+  \\"error\\": \\"Error\\",
+  \\"errorMessage\\": \\"UNKNOWN ERROR\\",
+  \\"requestId\\": \\"00000000-0000-0000-0000-000000000000\\"
+}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "isBase64Encoded": false,
+  "statusCode": 500,
+}
+`;
+
+exports[`Error response should obfuscate error details in production 1`] = `
+Object {
+  "body": "{
+  \\"error\\": \\"Error\\",
+  \\"errorMessage\\": \\"INTERNAL SERVER ERROR\\",
+  \\"requestId\\": \\"00000000-0000-0000-0000-000000000000\\"
+}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "isBase64Encoded": false,
+  "statusCode": 500,
+}
+`;
+
+exports[`Error response should return detailed error 1`] = `
+Object {
+  "body": "{
+  \\"error\\": \\"Error\\",
+  \\"errorMessage\\": \\"Test error message\\",
+  \\"requestId\\": \\"00000000-0000-0000-0000-000000000000\\"
+}",
+  "headers": Object {
+    "Content-Type": "application/json",
+  },
+  "isBase64Encoded": false,
+  "statusCode": 500,
+}
+`;
