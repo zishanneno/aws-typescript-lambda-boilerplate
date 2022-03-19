@@ -6,15 +6,24 @@ Globals:
   Function:
     Timeout: 15
 
+Parameters:
+  Stage:
+    Description: Environment variable when deploying to production
+    Type: String
+    Default: prod
+
 Resources:
   pingFunction:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: ../dist/
-      Handler: app.lambdaHandler
+      Handler: index.lambdaHandler
       Runtime: nodejs14.x
       Architectures:
         - x86_64
+      Environment:
+        Variables:
+          STAGE: !Ref Stage
       Events:
         Ping:
           Type: Api
