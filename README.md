@@ -33,7 +33,11 @@ Once set up, make sure that you have Docker running. You do not need to run any 
   - Performs `yarn build` and then also builds the lambda function into `.aws-sam` directory along with CloudFormation template that can be used for manual deployment.
 
 - `yarn deploy`
+
   - Builds the lambda and CloudFormation template using `sam:build` script, and and walks you through a guided deployment.
+
+- `yarn test`
+  - Runs testing of code, compares snapshots, and outputs test coverage.
 
 ## :information_source: Further Info
 
@@ -47,5 +51,4 @@ Why or what is `rimraf` package? Because everybody ain't using \*nix. :smile:
 
 ## :sparkles: Coming up
 
-- Unit tests using Jest
 - Boilerplate code for other resources such as AWS Secrets Manager, S3, DynamoDB etc.
