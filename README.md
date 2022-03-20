@@ -1,5 +1,7 @@
 # AWS Typescripted Lambda Boilerplate
 
+![GitHub](https://img.shields.io/github/license/zishanneno/aws-typescript-lambda-boilerplate) ![CircleCI](https://img.shields.io/circleci/build/github/zishanneno/aws-typescript-lambda-boilerplate/main) ![Codecov branch](https://img.shields.io/codecov/c/github/zishanneno/aws-typescript-lambda-boilerplate/main?token=VMXEW5DBRN)
+
 ## :information_desk_person: What is this?
 
 This repository contains boilerplate code for quickly getting started with developing and testing an AWS lambda locally using TypeScript, transpiling and bundling your source and modules into a single file, and performing a guided deployment using [AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) (Serverless Application Model).
