@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - node/install:
-          node-version: '14'
+          node-version: "14"
       - node/install-yarn
       - node/install-packages:
           app-dir: ~/aws-typescript-lambda-boilerplate
@@ -34,11 +34,8 @@ jobs:
           name: Test
           command: yarn test
       - store_artifacts:
-          path: reports/junit/test-results.xml
-          destination: deliverable.xml
-      - store_artifacts:
-          path: coverage
-          destination: coverage
+          path: dist
+          destination: dist
       - store_test_results:
           path: reports/junit/test-results.xml
       - codecov/upload:
