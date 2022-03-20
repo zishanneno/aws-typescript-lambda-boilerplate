@@ -26,7 +26,7 @@ jobs:
             - .
   test:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:current
     steps:
       - attach_workspace:
           at: .
@@ -39,6 +39,8 @@ jobs:
       - store_artifacts:
           path: coverage
           destination: coverage
+      - store_test_results:
+          path: reports/junit/test-results.xml
       - codecov/upload:
           file: coverage/coverage-final.json
 
