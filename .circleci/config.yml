@@ -6,6 +6,8 @@ orbs:
 
 jobs:
   build:
+    docker:
+      - image: cimg/node:14
     working_directory: ~/aws-typescript-lambda-boilerplate
     executor: node/default
     steps:
@@ -15,13 +17,16 @@ jobs:
           app-dir: ~/aws-typescript-lambda-boilerplate
           cache-path: node_modules
           override-ci-command: yarn
+      - run:
+          name: Build
+          command: yarn build
       - persist_to_workspace:
           root: .
           paths:
             - .
   test:
     docker:
-      - image: cimg/node:current
+      - image: cimg/node:14
     steps:
       - attach_workspace:
           at: .
@@ -29,7 +34,7 @@ jobs:
           name: Test
           command: yarn test
       - store_artifacts:
-          path: test-results.xml
+          path: reports/junit/test-results.xml
           destination: deliverable.xml
       - store_artifacts:
           path: coverage
