@@ -33,6 +33,8 @@ jobs:
       - store_artifacts:
           path: coverage
           destination: coverage
+      - store_test_results:
+          path: test-results
 
 workflows:
   version: 2
