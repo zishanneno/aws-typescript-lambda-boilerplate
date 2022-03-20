@@ -22,6 +22,8 @@ jobs:
     docker:
       - image: cimg/node:current
     steps:
+      - attach_workspace:
+          at: .
       - run:
           name: Test
           command: yarn test
