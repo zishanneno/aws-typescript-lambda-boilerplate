@@ -25,6 +25,9 @@ lerna-debug.log*
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
+# reports directory used by jest-junit reporter
+reports
+
 # Runtime data
 pids
 *.pid
@@ -200,5 +203,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-# End of https://www.toptal.com/developers/gitignore/api/osx,node,linux,windows,sam
