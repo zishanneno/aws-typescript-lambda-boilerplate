@@ -20,6 +20,9 @@ jobs:
       - run:
           name: Build
           command: yarn build
+      - store_artifacts:
+          path: dist
+          destination: dist
       - persist_to_workspace:
           root: .
           paths:
@@ -33,9 +36,6 @@ jobs:
       - run:
           name: Test
           command: yarn test
-      - store_artifacts:
-          path: dist
-          destination: dist
       - store_test_results:
           path: reports/junit/test-results.xml
       - codecov/upload:
